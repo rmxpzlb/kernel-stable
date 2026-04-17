@@ -1,0 +1,60 @@
+/dts-v1/;
+/plugin/;
+&{/} {
+    model = "Frank's Orange Pi 5 Plus";
+};
+
+&{/chosen} {
+    stdout-path = "serial2:115200n8";
+};
+
+&led_blue_gpio {
+    default-state = "on";
+};
+
+&gpu_opp_table {
+	opp-400000000 {
+		status = "disabled";
+	};
+
+	opp-600000000 {
+		status = "disabled";
+	};
+
+	opp-700000000 {
+		status = "disabled";
+	};
+
+	opp-800000000 {
+		status = "disabled";
+	};
+
+	opp-900000000 {
+		status = "disabled";
+	};
+
+	opp-1000000000 {
+		status = "disabled";
+	};
+
+	opp-425000000 {
+		opp-hz = /bits/ 64 <425000000>;
+		opp-microvolt = <675000 675000 850000>;
+	};
+	opp-750000000 {
+		opp-hz = /bits/ 64 <750000000>;
+		opp-microvolt = <750000 750000 850000>;
+	};
+	opp-850000000 {
+		opp-hz = /bits/ 64 <850000000>;
+		opp-microvolt = <800000 800000 850000>;
+	};
+};
+
+&hdmi_receiver_cma {
+	status = "disabled";
+};
+
+&hdmi_receiver {
+	status = "disabled";
+};
