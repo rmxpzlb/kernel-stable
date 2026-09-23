@@ -65,10 +65,16 @@ fi
 echo "%define with_debuginfo_manual $with_debuginfo_manual"
 echo "%define with_debuginfo_rpm $with_debuginfo_rpm"
 
+sub_rel=$("${srctree}/scripts/build-version")
+pkg_version=${KERNELRELEASE%%-*}
+pkg_release=300.${sub_rel}.frank
+pkg_kernel_release=${pkg_version}-${pkg_release}
+
 cat<<EOF
 %define ARCH ${ARCH}
-%define KERNELRELEASE ${KERNELRELEASE}
-%define pkg_release $("${srctree}/scripts/build-version")
+%define KERNELRELEASE ${pkg_kernel_release}
+%define pkg_version ${pkg_version}
+%define pkg_release ${pkg_release}
 EOF
 
 cat "${srctree}/scripts/package/kernel.spec"
