@@ -5,8 +5,8 @@
 
 Name: kernel
 Summary: The Linux Kernel
-Version: %(echo %{KERNELRELEASE} | sed -e 's/-/_/g')
-Release: %{pkg_release}%{?dist}
+Version: %{pkg_version}
+Release: %{pkg_release}
 License: GPL
 Group: System Environment/Kernel
 Vendor: The Linux Community
